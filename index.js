@@ -171,7 +171,7 @@ shopify.upload = function(filepath, file, host, base, themeid) {
 function gulpShopifyUpload(apiKey, password, host, themeid, options) {
 
   // Set up the API
-  shopify._setOptions(options);
+  shopify._setOptions(options || {});
   shopifyAPI = shopify._getApi(apiKey, password, host);
 
   gutil.log('Ready to upload to ' + gutil.colors.magenta(host));
